@@ -6,7 +6,7 @@
 #
 #  id          :bigint           not null, primary key
 #  amount      :decimal(6, 2)
-#  status      :string
+#  status      :string           default("pendig_pay")
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  merchant_id :bigint
@@ -28,4 +28,5 @@ class Order < ApplicationRecord
   validates :amount, presence: true
 
   # Scopes & Callbacks
+  scope :by_merchant, -> (merchant_id) { where merchant_id: merchant_id }
 end
