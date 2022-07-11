@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_11_111113) do
+ActiveRecord::Schema.define(version: 2022_07_11_131827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2022_07_11_111113) do
     t.decimal "amount", precision: 6, scale: 2, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "week_number"
     t.index ["order_id"], name: "index_disbursements_on_order_id"
   end
 
@@ -35,7 +36,7 @@ ActiveRecord::Schema.define(version: 2022_07_11_111113) do
     t.bigint "shopper_id"
     t.bigint "merchant_id"
     t.decimal "amount", precision: 6, scale: 2
-    t.string "status"
+    t.string "status", default: "pending_pay"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["merchant_id"], name: "index_orders_on_merchant_id"

@@ -4,11 +4,12 @@
 #
 # Table name: disbursements
 #
-#  id         :bigint           not null, primary key
-#  amount     :decimal(6, 2)    not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  order_id   :bigint
+#  id          :bigint           not null, primary key
+#  amount      :decimal(6, 2)    not null
+#  week_number :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  order_id    :bigint
 #
 # Indexes
 #
