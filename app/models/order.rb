@@ -23,6 +23,7 @@ class Order < ApplicationRecord
   # Associations
   belongs_to :merchant
   belongs_to :shopper
+  has_many :disbursements
 
   # Validations
   validates :amount, presence: true
