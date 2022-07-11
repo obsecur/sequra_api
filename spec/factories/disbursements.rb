@@ -5,7 +5,7 @@
 # Table name: disbursements
 #
 #  id         :bigint           not null, primary key
-#  amount     :decimal(, )
+#  amount     :decimal(6, 2)    not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  order_id   :bigint
