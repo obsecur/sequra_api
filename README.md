@@ -1,24 +1,44 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## SeQura API - Documentation
 
-Things you may want to cover:
+Let Start!
 
-* Ruby version
+# Behind the curtain
+I tried to respect the time slot and the time division was distributed as follows:
 
-* System dependencies
+The first 2 hours I used to study the case and make a UML to interpret the problem well as well as create the project with the initial gems that I was going to need and the data modeling.
 
-* Configuration
+I also used the time to create the endpoint, the worker that should run every Monday, and validations.
 
-* Database creation
+The last hour I left to refactor, create an api documentation, write this readme and write unit tests which I couldn't get to over time.
 
-* Database initialization
+# Requirements
+This project it made with ruby 2.7.0 version.
+I used a database with PostgreSQL.
 
-* How to run the test suite
+# API Documentation
+Visit this URL for more information abount the endpoint -> https://documenter.getpostman.com/view/16208664/UzJQqEqm
 
-* Services (job queues, cache servers, search engines, etc.)
+# Run project
+Now yes, to be able to run the project we need:
 
-* Deployment instructions
+1) Clone the repository or use a fork
+2) Install the dependencies `bundle install`
+3) Run migrations and populate database with `rails db:migrate db:populate`
+4) Run server with `rails s`
+5) For execute workers we need up Redis and Sidekiq on separeted terminal with `redis-server` and `bundle exec sidekiq`
+6) From rails console `rails c` we can execute the worker with `ExecuteDisbursementsWorker.new.perform`
 
-* ...
+# Missing Tasks
+- Do unit tests of the models, requests and workers (The suite got set up but I didn't get there in time)
+- Add more validations to model fields
+- Add pipelines to automate the tasks of rubocop, rspec and, if necessary, a deploy
+- Use use cases to centralize business logic programming logic and make controllers smaller (maybe it was not the case but I wanted to show it)
+- Use an error handler
+- General refactoring
+- Configure Capistrano for deploy to server and configure cron tab
+- Add Authentication on requests
+- Add HTTP status response on endpoint
+- Review if exists n+1 problem
+- Use json data from challenge for mocks on testing
