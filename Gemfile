@@ -19,6 +19,8 @@ gem "redis"
 # gem 'bcrypt', '~> 3.1.7'
 # Use sidekiq as background processing
 gem "sidekiq"
+# Programm Jobs
+gem "whenever", require: false
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
