@@ -2,7 +2,7 @@
 
 ## SeQura API - Documentation
 
-Let Start!
+Let's Start!
 
 # Behind the curtain
 I tried to respect the time slot and the time division was distributed as follows:
