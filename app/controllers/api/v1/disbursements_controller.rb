@@ -4,13 +4,14 @@ module Api
   module V1
     class DisbursementsController < ApplicationController
       def index
-        render json: disbursements
+        render json: disbursements, each_serializer: DisbursementSerializer
       end
 
       private
 
       def disbursements
         @disbursements ||= fetch_disbursements
+        @disbursements.includes([:order])
       end
 
       def fetch_disbursements

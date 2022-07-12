@@ -4,13 +4,14 @@
 #
 # Table name: orders
 #
-#  id          :bigint           not null, primary key
-#  amount      :decimal(6, 2)
-#  status      :string           default("pendig_pay")
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  merchant_id :bigint
-#  shopper_id  :bigint
+#  id           :bigint           not null, primary key
+#  amount       :decimal(6, 2)
+#  completed_at :datetime
+#  status       :string           default("pendig_pay")
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  merchant_id  :bigint
+#  shopper_id   :bigint
 #
 # Indexes
 #

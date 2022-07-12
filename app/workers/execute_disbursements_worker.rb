@@ -6,7 +6,7 @@ class ExecuteDisbursementsWorker
 
   def perform
     # First target the completed orders
-    completed_orders = Order.completed
+    completed_orders = Order.ready_for_disbursement
 
     # create disbursements with fee calculated
     completed_orders.each do |order|

@@ -25,28 +25,31 @@ namespace :db do
     def order_amount(shopper_name)
       case shopper_name
       when "Juan"
-        4.00
+        50.00
       when "Pepe"
-        59.00
+        10.15
       when "Pablo"
-        1540.15
+        300.00
       when "Karina"
-        150.45
+        1000.00
       when "Claudia"
-        15.34
+        1000.00
       when "Lidia"
-        560.12
+        300.00
       when "Diego"
-        650.10
+        10.15
       when "Luz"
-        200.75
+        50.00
       end
     end
 
-    # Merchants
-    merchant_names.count.times do |i|
-      
-    end
+    date_orders = [
+      DateTime.current,
+      DateTime.current - 1,
+      DateTime.current - 2,
+      DateTime.current - 3,
+      nil
+    ]
 
     # Shoppers
     shopper_names.count.times do |i|
@@ -59,6 +62,7 @@ namespace :db do
           }
       }
 
+      # Merchants
       merchant_params = {
           merchant: {
               name: merchant_name
@@ -73,15 +77,11 @@ namespace :db do
         order: {
           shopper: shopper,
           merchant: merchant,
-          amount: amount
+          amount: amount,
+          completed_at: date_orders.sample
         }
     }
       order = Order.create!(order_params[:order])
     end
-
-    # Set some order as completed
-    Order.first.completed!
-    Order.second.completed!
-    Order.third.completed!
   end
 end
